@@ -3,6 +3,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <profiles>
+        <profile>
+            <id>localmysql</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>localmysql</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
+    
     <parent>
         <groupId>com.github.sfg-beer-works</groupId>
         <artifactId>sfg-brewery-bom</artifactId>
@@ -20,6 +38,6 @@
 
 
     <dependencies>
-
+    
     </dependencies>
 </project>
